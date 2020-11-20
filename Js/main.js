@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     $('#top_card_button').on('click', function click() {
 
-        setTimeout(function (){
             const dfd = $.ajax({
 
             url: 'http://127.0.0.1:8000/form/',
@@ -17,7 +16,6 @@ $(document).ready(function () {
         dfd.fail(function () {
             alert('Something Went Wrong :(')
         })
-        },2000)
 
     })
 
