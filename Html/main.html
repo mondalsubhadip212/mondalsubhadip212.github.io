@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>one.html</title>
+</head>
+<body id="body">
+<div id="main_card">
+    <div class="row m-3">
+        <div class="card column m-3" id="top_card">
+            <div class="card-header">
+                <h5>
+                    Fetch Data From API :)
+                </h5>
+            </div>
+            <div class="card-body mx-auto">
+                <button class="btn btn-outline-success" id="top_card_button">
+                    GET Data
+                </button>
+            </div>
+        </div>
+        <div class="card column m-3 w-75">
+            <div class="card-header">
+                <h5>
+                    Post Data To API :)
+                </h5>
+            </div>
+            <div class="card-body">
+                <form class="form-inline" id="form" action="#">
+                    <div class="form-group" style="margin: 15px;">
+                        <label for="Name" style="margin-right: 5px;">Fullname</label>
+                        <input type="text" class="form-control" id="Name" name="name">
+                    </div>
+                    <div class="form-group" style="margin: 15px;">
+                        <label for="Age" style="margin-right: 5px;">Age</label>
+                        <input type="number" class="form-control" id="Age" name="age">
+                    </div>
+                    <div class="form-group" style="margin: 15px;">
+                        <label for="Place" style="margin-right: 5px;">Place</label>
+                        <input type="Text" class="form-control" id="Place" name="place">
+                    </div>
+                    <button type="button" id="submit" class="btn btn-outline-success" style="margin:15px;">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="table" style="margin: 20px;" class="mx-auto w-50">
+    </div>
+</div>
+</body>
+<script src="../Js/main.js"></script>
+<script type="text/javascript" src="../Js/serializetoJson.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
