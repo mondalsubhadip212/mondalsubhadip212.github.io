@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     $('#submit').on('click', function postdata() {
 
-        $.getScript(" https://github.com/marioizquierdo/jquery.serializeJSON", function () {
+        // $.getScript(" https://github.com/marioizquierdo/jquery.serializeJSON", function () {
             const raw_data = $('#form').serializeJSON()
 
             const dfd = $.ajax({
@@ -41,7 +41,7 @@ $(document).ready(function () {
             dfd.fail(function () {
                 alert('Something Went Wrong :(')
             })
-        })
+        // })
     })
 
     function table(data) {
