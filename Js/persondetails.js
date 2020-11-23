@@ -19,7 +19,7 @@ $(document).ready(function () {
             })
             dfd.done(function (){
                 localStorage.clear()
-                window.location.href = '../Html/main.html'
+                window.location.href = '../index.html'
                 localStorage.setItem("id", 1)
             })
             dfd.fail(function(){
@@ -37,7 +37,7 @@ $(document).ready(function () {
 
         dfd.done(function (){
             localStorage.clear()
-            window.location.href = '../Html/main.html'
+            window.location.href = '../index.html'
             localStorage.setItem("id", 1)
         })
 
@@ -49,13 +49,13 @@ $(document).ready(function () {
     $('#cancel').on('click',function(){
         localStorage.clear()
         localStorage.setItem("id",1)
-        window.location.href = '../Html/main.html'
+        window.location.href = '../index.html'
     })
 
     $('#back').on('click',function(){
         localStorage.clear()
         localStorage.setItem("id",1)
-        window.location.href = '../Html/main.html'
+        window.location.href = '../index.html'
     })
 
 

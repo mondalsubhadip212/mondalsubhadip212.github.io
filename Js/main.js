@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     $('#submit').on('click', function postdata() {
 
-        $.getScript("../Js/serializeToJson.js", function () {
+        $.getScript("Js/serializeToJson.js", function () {
             const raw_data = $('#form').serializeJSON()
 
             const dfd = $.ajax({
@@ -46,7 +46,7 @@ $(document).ready(function () {
 
     function table(data) {
 
-        $('#table').load('../Html/table.html', function () {
+        $('#table').load('Html/table.html', function () {
             $.each(data, function (index, value) {
 
                 $('#table_bottom').append(
@@ -74,7 +74,7 @@ $(document).ready(function () {
 
                     dfd.done(function (data) {
                         localStorage.setItem('data', JSON.stringify(data))
-                        window.location.href = '../Html/persondetails.html'
+                        window.location.href = 'Html/persondetails.html'
                     })
 
                     dfd.fail(function () {
