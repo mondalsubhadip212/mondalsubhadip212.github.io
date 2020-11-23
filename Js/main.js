@@ -1,25 +1,27 @@
 $(document).ready(function () {
 
     $('#top_card_button').on('click', function click() {
+        getdata()
+    })
 
-            const dfd = $.ajax({
-
+    function getdata() {
+        const dfd = $.ajax({
             url: 'http://127.0.0.1:8000/form/',
             type: 'GET',
             dataType: 'json',
         })
 
-        dfd.done(function (data){
+        dfd.done(function (data) {
+
             table(data)
         })
 
         dfd.fail(function () {
             alert('Something Went Wrong :(')
         })
+    }
 
-    })
-
-    $('#submit').on('click', function () {
+    $('#submit').on('click', function postdata() {
 
         $.getScript("../Js/serializeToJson.js", function () {
             const raw_data = $('#form').serializeJSON()
@@ -46,9 +48,13 @@ $(document).ready(function () {
 
         $('#table').load('../Html/table.html', function () {
             $.each(data, function (index, value) {
-                $('#table_bottom').append('    <tr id="table-body">\n' +
+
+                $('#table_bottom').append(
+                    '<tr id="table-body">\n' +
                     '        <td id="table-body-one">\n' +
-                    value['name'] + '\n' +
+                    '<button class="btn btn-primary" ' + 'id=' + value["id"] + '>' +
+                    value['name'] +
+                    '</button>' + '\n' +
                     '        </td>\n' +
                     '        <td id="table-body-two">\n' +
                     value['age'] + '\n' +
@@ -56,9 +62,37 @@ $(document).ready(function () {
                     '        <td id="table-body-three">\n' +
                     value['place'] + '\n' +
                     '        </td>\n' +
-                    '    </tr>')
+                    '</tr>')
+
+                $('#' + value["id"]).on('click', function () {
+
+                    const dfd = $.ajax({
+                        url: 'http://127.0.0.1:8000/details/' + value["id"] + '/',
+                        method: 'GET',
+                        dataType: 'json',
+                    })
+
+                    dfd.done(function (data) {
+                        localStorage.setItem('data', JSON.stringify(data))
+                        window.location.href = '../Html/persondetails.html'
+                    })
+
+                    dfd.fail(function () {
+                        alert('Something Went Wrong :(')
+                    })
+                })
             })
         })
     }
+
+    function redirect() {
+        id = localStorage.getItem("id")
+        localStorage.clear()
+        if (id === "1") {
+            getdata()
+        }
+    }
+
+    redirect()
 
 })
