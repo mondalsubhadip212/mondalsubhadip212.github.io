@@ -27,7 +27,7 @@ $(document).ready(function () {
             const raw_data = $('#form').serializeJSON()
 
             const dfd = $.ajax({
-                url: 'http://127.0.0.1:8000/form/',
+                url: 'https://formcr.herokuapp.com/form/',
                 type: 'POST',
                 data: raw_data,
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -67,7 +67,7 @@ $(document).ready(function () {
                 $('#' + value["id"]).on('click', function () {
 
                     const dfd = $.ajax({
-                        url: 'http://127.0.0.1:8000/details/' + value["id"] + '/',
+                        url: 'https://formcr.herokuapp.com/details/' + value["id"] + '/',
                         method: 'GET',
                         dataType: 'json',
                     })
