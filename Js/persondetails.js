@@ -11,7 +11,7 @@ $(document).ready(function () {
         const raw_data = $('#form').serializeJSON()
 
         const dfd = $.ajax({
-            url: 'http://127.0.0.1:8000/details/' + data["id"] + '/',
+            url: 'https://formcr.herokuapp.com/details/' + data["id"] + '/',
             type: 'POST',
             data: raw_data,
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -31,7 +31,7 @@ $(document).ready(function () {
     $('#delete').on('click', function () {
 
         const dfd = $.ajax({
-            url: 'http://127.0.0.1:8000/delete/' + data["id"] + '/',
+            url: 'https://formcr.herokuapp.com/delete/' + data["id"] + '/',
             method: 'POST',
         })
 
