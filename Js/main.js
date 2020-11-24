@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     function getdata() {
         const dfd = $.ajax({
-            url: 'http://127.0.0.1:8000/form/',
+            url: 'https://formcr.herokuapp.com/form/',
             type: 'GET',
             dataType: 'json',
         })
